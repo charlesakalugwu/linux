@@ -84,4 +84,14 @@ perl -MCPAN -e 'install Perlbal'
 #perl -MCPAN -e 'install ExtUtils::MakeMaker'
 #perl -MCPAN -e 'install DBD::mysql'
 
+# install the various mogilefs configuration files (note you should edit these files to conform to your infrastructure)
+
+wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogilefs.conf -O /etc/mogilefs/mogilefs.conf
+
+wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogstored.conf -O /etc/mogilefs/mogstored.conf
+
+wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogilefsd.conf -O /etc/mogilefs/mogilefsd.conf
+
+wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogtool.conf -O /etc/mogilefs/mogtool.conf
+
 echo "MogileFS installed"
