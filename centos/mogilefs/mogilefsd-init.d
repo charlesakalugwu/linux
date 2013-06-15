@@ -16,11 +16,11 @@
 [ "$NETWORKING" = "no" ] && exit 0
 
 
-lockfile=/home/mogilefs/mogilefs-service/tracker/mogilefsd.lock
+lockfile=${LOCKFILE-/var/lock/mogilefsd}
 
-MOGILEFSD_CONF_FILE="/home/mogilefs/mogilefs-service/tracker/tracker.conf"
+MOGILEFSD_CONF_FILE="/etc/mogilefs/mogilefsd.conf"
 
-MOGILEFSD_BINARY="/home/mogilefs/mogilefs-service/bin/mogilefsd"
+MOGILEFSD_BINARY="/usr/local/bin/mogilefsd"
 
 
 start() {
@@ -28,7 +28,7 @@ start() {
          su mogilefs -c "$MOGILEFSD_BINARY --config=$MOGILEFSD_CONF_FILE --daemon"
          RETVAL=$?
          echo
-         [ $RETVAL = 0 ] && touch $lockfile
+         [ $RETVAL = 0 ] && touch ${lockfile}
          return $RETVAL
 }
 stop() {
@@ -36,7 +36,7 @@ stop() {
          killproc mogilefsd
          RETVAL=$?
          echo
-         [ $RETVAL = 0 ] && rm -f $lockfile
+         [ $RETVAL = 0 ] && rm -f ${lockfile}
          return $RETVAL
 }
 reload() {
