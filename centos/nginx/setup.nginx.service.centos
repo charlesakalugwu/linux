@@ -1,3 +1,15 @@
-wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/install.nginx.centos -O /etc/init.d/nginx
+# get the nginx init script and copy it to /etc/init.d/nginx
+wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/nginx-init.d -O /etc/init.d/nginx
+
+# make the script executable
 chmod +x /etc/init.d/nginx
+
+# enable it to run as a service
+chkconfig nginx on
+
+# confirm all is well with the service addition
+chkconfig --list nginx
+
+# start the service
+service nginx start
 
