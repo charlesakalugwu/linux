@@ -1,1 +1,72 @@
- 
+# start by creating an appropriate user for the nginx service to use
+
+# The program 'mogilefsd' will not run as root so you will need to 
+# run this as a non-root user. To create a user for this, enter the
+# following command and follow the prompts to create the "mogilefs" user:
+useradd -rm mogilefs
+
+passwd mogilefs
+
+# Install required build tools
+
+yum -y groupinstall "Development Tools"
+yum -y install perl-YAML
+yum -y install perl-CPAN
+
+# Install mogilefs server
+# If you get any errors during the following(make install) process it will probably 
+# be errors telling you that a dependent module is missing. If during the 'make test'
+# step you get the error, "t/00-startup....DBI connect('mysql','root',...) failed: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) at t/lib/mogtestlib.pl line 16" 
+# it can probably be ignored – it should not be necessary for MySQL to be running
+
+wget https://github.com/cprenzberg/MogileFS-Server/archive/master.zip
+unzip master
+rm -rf master.zip
+cd MogileFS-Server-master
+perl Makefile.PL
+make
+make test
+make install
+cd ..
+
+# Install mogilefs utils
+
+wget https://github.com/cprenzberg/MogileFS-Utils/archive/master.zip
+unzip master
+rm -rf master.zip
+cd MogileFS-Utils-master
+perl Makefile.PL
+make
+make test
+make install
+cd ..
+
+# Install mogilefs perl client
+
+wget https://github.com/cprenzberg/perl-MogileFS-Client/archive/master.zip
+unzip master
+rm -rf master.zip
+cd perl-MogileFS-Client-master
+perl Makefile.PL
+make
+make test
+make install
+cd ..
+
+
+# Install perl modules
+
+perl -MCPAN -e 'install Danga::Socket'
+perl -MCPAN -e 'install Gearman::Client'
+perl -MCPAN -e 'install Gearman::Server' 
+perl -MCPAN -e 'install Gearman::Client::Async' 
+perl -MCPAN -e 'install Net::Netmask' 
+perl -MCPAN -e 'install IO::WrapTie' 
+perl -MCPAN -e 'install IO::AIO' 
+perl -MCPAN -e 'install List::MoreUtils'
+perl -MCPAN -e 'install Path::Class' 
+perl -MCPAN -e 'install Perlbal'
+perl -MCPAN -e 'install ExtUtils::MakeMaker'
+perl -MCPAN -e 'install DBD::mysql'
+
+echo "MogileFS installed"
