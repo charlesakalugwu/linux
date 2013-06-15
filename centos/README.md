@@ -1,4 +1,4 @@
-linux
-=====
+Cent OS 6.3 / RHEL 
+==================
 
-linux scripts for various things
+Scripts for installing nginx, couchbase, jdk, jboss, mogilefs on CentOS/RHEL
