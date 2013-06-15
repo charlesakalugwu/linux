@@ -86,6 +86,10 @@ perl -MCPAN -e 'install Perlbal'
 
 # install the various mogilefs configuration files (note you should edit these files to conform to your infrastructure)
 
+mkdir /etc/mogilefs
+
+chown -R mogilefs:mogilefs /etc/mogilefs/
+
 wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogilefs.conf -O /etc/mogilefs/mogilefs.conf
 
 wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogstored.conf -O /etc/mogilefs/mogstored.conf
