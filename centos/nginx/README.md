@@ -16,9 +16,9 @@ To install/update nginx run:
 
 To install/update nginx run:
 
-  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/setup.nginx.service.centos -O ./install.nginx.service
-  chmod +x ./install.nginx.service
-  ./install.nginx.service
+  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/setup.nginx.service.centos -O ./install.nginx.service   
+  chmod +x ./install.nginx.service   
+  ./install.nginx.service   
 
 
 ####Current Versions of nginx and required modules
