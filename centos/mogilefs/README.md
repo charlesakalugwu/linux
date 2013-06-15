@@ -11,7 +11,7 @@ To install/update nginx run:
   
   
   
-#### Install MogileFS tracker service daemon
+#### Install MogileFS tracker service 
 ----------------------------------------------
 
 To install/update nginx run:
@@ -22,7 +22,7 @@ To install/update nginx run:
   
   
   
-#### Install MogileFS storage node service daemon
+#### Install MogileFS storage node service 
 --------------------------------------------------
 
 To install/update nginx run:
