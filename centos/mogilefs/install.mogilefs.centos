@@ -78,7 +78,7 @@ perl -MCPAN -e 'install IO::AIO'
 perl -MCPAN -e 'install List::MoreUtils'
 perl -MCPAN -e 'install Path::Class' 
 perl -MCPAN -e 'install Perlbal'
-perl -MCPAN -e 'install ExtUtils::MakeMaker'
+#perl -MCPAN -e 'install ExtUtils::MakeMaker'
 #perl -MCPAN -e 'install DBD::mysql'
 
 echo "MogileFS installed"
