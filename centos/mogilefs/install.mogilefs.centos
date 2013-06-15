@@ -58,7 +58,12 @@ cd ..
 
 # first tell CPAN to automaically use defaults during installation
 # this prevents you from typing hundreds of yes confirmations
-PERL_MM_USE_DEFAULT=1
+
+# perl -MCPAN -e shell
+# Run these two commands in the CPAN shell:
+
+# o conf prerequisites_policy follow
+# o conf commit
 
 perl -MCPAN -e 'install Danga::Socket'
 perl -MCPAN -e 'install Gearman::Client'
