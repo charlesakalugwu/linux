@@ -11,5 +11,5 @@ chkconfig mogilefsd on
 chkconfig --list mogilefsd
 
 # start the service
-service mogilefsd start
+# service mogilefsd start
 
