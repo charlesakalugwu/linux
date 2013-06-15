@@ -30,19 +30,19 @@ rm pcre-8.33.tar.gz
 
 wget https://github.com/cprenzberg/nginx-mogilefs-module/archive/master.zip
 
-unzip master.zip
+unzip master
 
-rm master.zip
+rm -rf ./master
 
 #echo nginx module
 wget https://github.com/cprenzberg/echo-nginx-module/archive/master.zip
-unzip master.zip
-rm master.zip
+unzip master
+rm -rf ./master
 
 #Download memc-nginx-module (for nginx-memcached comms)
 wget https://github.com/agentzh/memc-nginx-module/archive/v0.13rc3.zip
-unzip v0.13rc3.zip
-rm -rf v0.13rc3
+unzip v0.13rc3
+rm -rf ./v0.13rc3
 
 
 #download openssl 1.0.1e
