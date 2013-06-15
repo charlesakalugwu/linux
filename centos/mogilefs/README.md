@@ -35,9 +35,9 @@ To install/update mogilefs storage node service (mogstored) run:
 ####Current Versions of MogileFS and required modules
 -----------------------------------------------
 
-   MogileFS Server - 2.6.7
-   MogileFS Utils - 2.2.7
-   MogileFS perl-Client - 1.16
+   MogileFS Server - 2.6.7    
+   MogileFS Utils - 2.2.7    
+   MogileFS perl-Client - 1.16    
 
 
 Installation assumes you are logged in as root. Use sudo as necessary if you are not root
