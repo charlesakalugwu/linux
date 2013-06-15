@@ -17,8 +17,8 @@ Note:
   # if not edit install.mogilefs.centos and uncomment the following commands from that file   
   
   perl -MCPAN -e shell    
-  # Run these two commands in the CPAN shell:   
-
+  
+  # Run the following commands in the CPAN shell:   
   o conf prerequisites_policy follow   
   o conf build_requires_install_policy yes   
   o conf commit   
