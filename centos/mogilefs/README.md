@@ -10,6 +10,20 @@ To install/update mogilefs run:
   ./install.mogilefs     
   
   
+Note:
+  # you need to tell perl CPAN to automaically use defaults during installation
+  # this prevents you from typing potentially hundreds of yes/no confirmations
+  # assumes you already have perl CPAN installed
+  # if not edit install.mogilefs.centos and uncomment the following commands from that file
+  
+  perl -MCPAN -e shell
+  # Run these two commands in the CPAN shell:
+
+  o conf prerequisites_policy follow
+  o conf build_requires_install_policy yes
+  o conf commit
+  exit
+  
   
 #### Install MogileFS tracker service 
 ----------------------------------------------
