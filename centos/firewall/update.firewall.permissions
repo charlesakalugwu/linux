@@ -25,7 +25,8 @@
  iptables -A INPUT -s 192.168.0.0/24 -p tcp --dport 80 -j ACCEPT
 
 # Allow for Bind9
-# iptables -A INPUT -s 192.168.0.0/24 -p tcp --dport 53 -j ACCEPT
+iptables -A INPUT -s 192.168.0.0/24 -p tcp --dport 53 -j ACCEPT
+iptables -A INPUT -s 192.168.0.0/24 -p udp --dport 53 -j ACCEPT
 
 
 # Set default policies for INPUT, FORWARD and OUTPUT chains
