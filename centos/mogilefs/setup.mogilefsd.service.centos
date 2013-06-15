@@ -1,6 +1,9 @@
 # get the mogilefsd init script and copy it to /etc/init.d/mogilefsd
 wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogilefsd-init.d -O /etc/init.d/mogilefsd
 
+#chown it for mogilefs user
+chown mogilefs:mogilefs /etc/init.d/mogilefsd
+
 # make the script executable
 chmod +x /etc/init.d/mogilefsd
 
