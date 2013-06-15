@@ -6,7 +6,6 @@ To install/update mogilefs run:
   wget https://raw.github.com/cprenzberg/linux/master/centos/firewall/update.firewall.permissions -O ./update.firewall.rules    
   vi ./update.firewall.rules    
   # edit rules as you wish, save and exit the vim editor   
- 
   chmod +x ./update.firewall.rules    
   ./update.firewall.rules        
   
