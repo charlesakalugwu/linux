@@ -4,7 +4,7 @@
 # chkconfig: - 85 15
 # description: MogileFS storage node
 # processname: mogstored
-# config: /home/mogilefs/mogilefs-service/storage/storage.conf
+# config: /etc/mogilefs/mogstored.conf
 # pidfile: /var/run/mogstored.pid
 
 # Source function library.
@@ -17,21 +17,19 @@
 [ "$NETWORKING" = "no" ] && exit 0
 
 # Path to the apachectl script, server binary, and short-form for messages.
-lockfile=/home/mogilefs/mogilefs-service/storage/mogstored.lock
+lockfile=${LOCKFILE-/var/lock/mogstored}
 
-MOGSTORE_BINARY=/home/mogilefs/mogilefs-service/bin/mogstored
+MOGSTORE_BINARY=/usr/local/bin/mogstored
 
-MOGSTORE_CONF_FILE="/home/mogilefs/mogilefs-service/storage/storage.conf"
-
-MOGSTORE_STORAGE_FOLDER="/var/mogilefsdata"
+MOGSTORE_CONF_FILE="/etc/mogilefs/mogstored.conf"
 
 
 start() {
          echo -n $"Starting mogstored: "
-         $MOGSTORE_BINARY -d --config $MOGSTORE_CONF_FILE --docroot=$MOGSTORE_STORAGE_FOLDER > /dev/null
+         $MOGSTORE_BINARY -d --config $MOGSTORE_CONF_FILE > /dev/null
          RETVAL=$?
          echo
-         [ $RETVAL -eq 0 ] && touch $lockfile
+         [ $RETVAL -eq 0 ] && touch ${lockfile}
          return $RETVAL
 }
 stop() {
@@ -39,7 +37,7 @@ stop() {
          killproc mogstored
          RETVAL=$?
          echo
-         [ $RETVAL -eq 0 ] && rm -f $lockfile
+         [ $RETVAL -eq 0 ] && rm -f ${lockfile}
          return $RETVAL
 }
 reload() {
