@@ -1,47 +1,41 @@
 ####Install/Update MogileFS from source
 ----------------------------------
 
-To install/update nginx run:
+To install/update mogilefs run:
 
-  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/install.nginx.centos -O ./install.nginx   
-  vi ./install.nginx   
+  wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/install.mogilefs.centos -O ./install.mogilefs  
+  vi ./install.mogilefs     
   # edit versions and configure parameters as you wish, save and exit the vim editor   
-  chmod +x ./install.nginx   
-  ./install.nginx   
+  chmod +x ./install.mogilefs     
+  ./install.mogilefs     
   
   
   
 #### Install MogileFS tracker service 
 ----------------------------------------------
 
-To install/update nginx run:
+To install/update mogilefs tracker service (mogilefsd) run:
 
-  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/setup.nginx.service.centos -O ./install.nginx.service   
-  chmod +x ./install.nginx.service   
-  ./install.nginx.service   
+  wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/setup.mogilefsd.service.centos -O ./install.mogilefsd.service   
+  chmod +x ./install.mogilefsd.service  
+  ./install.mogilefsd.service   
   
   
   
 #### Install MogileFS storage node service 
 --------------------------------------------------
 
-To install/update nginx run:
+To install/update mogilefs storage node service (mogstored) run:
 
-  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/setup.nginx.service.centos -O ./install.nginx.service   
-  chmod +x ./install.nginx.service   
-  ./install.nginx.service   
+  wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/setup.mogstored.service.centos -O ./install.mogstored.service   
+  chmod +x ./install.mogstored.service   
+  ./install.mogstored.service   
 
 
 ####Current Versions of MogileFS and required modules
 -----------------------------------------------
 
-  nginx - 1.4.1   
-  pcre - 8.33   
-  openssl - 1.0.1e   
-  zlib - 1.2.8   
-  memc-nginx-module - v0.13rc3   
-  echo nginx module - v0.45   
-  nginx-mogilefs-plugin - 1.0.4   
+     
 
 
 
