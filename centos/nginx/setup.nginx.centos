@@ -1,3 +1,0 @@
-wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/install.nginx.centos -O ./install.nginx
-chmod +x install.nginx
-./install.nginx
