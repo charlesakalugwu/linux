@@ -1,13 +1,9 @@
 #!/bin/bash
 
-#start by creating an appropriate user for the nginx service to use
-useradd -r nginx
+#start by creating a system user for the nginx service to use (including home directory)
+useradd -rm nginx
 
 passwd nginx
-
-mkdir /home/nginx
-chown -R nginx:nginx /home/nginx/
-
 
 #installl GNU Development Tools (for compilers, make and stuff like that)
 yum -y groupinstall "Development Tools"
