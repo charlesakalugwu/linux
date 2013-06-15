@@ -63,6 +63,7 @@ cd ..
 # Run these two commands in the CPAN shell:
 
 # o conf prerequisites_policy follow
+# o conf build_requires_install_policy yes
 # o conf commit
 
 perl -MCPAN -e 'install Danga::Socket'
