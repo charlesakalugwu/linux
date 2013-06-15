@@ -40,7 +40,7 @@ unzip master
 rm -rf ./master
 
 #Download memc-nginx-module (for nginx-memcached comms)
-wget https://github.com/agentzh/memc-nginx-module/archive/v0.13rc3.zip
+wget https://github.com/cprenzberg/memc-nginx-module/archive/v0.13rc3.zip
 unzip v0.13rc3
 rm -rf ./v0.13rc3
 
