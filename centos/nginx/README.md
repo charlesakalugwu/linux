@@ -8,6 +8,17 @@ To install/update nginx run:
   # edit versions and configure parameters as you wish, save and exit the vim editor   
   chmod +x ./install.nginx   
   ./install.nginx   
+  
+  
+  
+#### Install nginx service daemon
+----------------------------------
+
+To install/update nginx run:
+
+  wget https://raw.github.com/cprenzberg/linux/master/centos/nginx/setup.nginx.service.centos -O ./install.nginx.service
+  chmod +x ./install.nginx.service
+  ./install.nginx.service
 
 
 ####Current Versions of nginx and required modules
