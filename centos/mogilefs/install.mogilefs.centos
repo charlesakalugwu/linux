@@ -21,7 +21,7 @@ yum -y install perl-CPAN
 
 wget https://github.com/cprenzberg/MogileFS-Server/archive/master.zip
 unzip master
-rm -rf master.zip
+rm -rf master
 cd MogileFS-Server-master
 perl Makefile.PL
 make
@@ -33,7 +33,7 @@ cd ..
 
 wget https://github.com/cprenzberg/MogileFS-Utils/archive/master.zip
 unzip master
-rm -rf master.zip
+rm -rf master
 cd MogileFS-Utils-master
 perl Makefile.PL
 make
@@ -45,7 +45,7 @@ cd ..
 
 wget https://github.com/cprenzberg/perl-MogileFS-Client/archive/master.zip
 unzip master
-rm -rf master.zip
+rm -rf master
 cd perl-MogileFS-Client-master
 perl Makefile.PL
 make
@@ -55,6 +55,10 @@ cd ..
 
 
 # Install perl modules
+
+# first tell CPAN to automaically use defaults during installation
+# this prevents you from typing hundreds of yes confirmations
+PERL_MM_USE_DEFAULT=1
 
 perl -MCPAN -e 'install Danga::Socket'
 perl -MCPAN -e 'install Gearman::Client'
