@@ -1,8 +1,17 @@
 # get the mogstored init script and copy it to /etc/init.d/mogstored
 wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/mogstored-init.d -O /etc/init.d/mogstored
 
+#chown it for mogilefs user
+chown mogilefs:mogilefs /etc/init.d/mogstored
+
 # make the script executable
 chmod +x /etc/init.d/mogstored
+
+#create storage root folder
+mkdir -p /var/mogdata/
+
+#chown it for mogilefs user
+chown -R mogilefs:mogilefs /var/mogdata/
 
 # enable it to run as a service
 chkconfig mogstored on
@@ -11,4 +20,4 @@ chkconfig mogstored on
 chkconfig --list mogstored
 
 # start the service
-service mogstored start
+#service mogstored start
