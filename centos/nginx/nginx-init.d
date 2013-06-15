@@ -24,6 +24,7 @@ prog=$(basename $nginx)
 
 NGINX_CONF_FILE="/usr/local/nginx/conf/nginx.conf"
 
+
 lockfile=/var/lock/subsys/nginx
 
 start() {
