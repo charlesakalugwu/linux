@@ -1,4 +1,4 @@
-Install/Update nginx from source
+####Install/Update nginx from source
 ----------------------------------
 
 To install/update nginx run:
@@ -10,7 +10,7 @@ To install/update nginx run:
   ./install.nginx   
 
 
-Current Versions of nginx and required modules
+####Current Versions of nginx and required modules
 -----------------------------------------------
 
   nginx - 1.4.1   
