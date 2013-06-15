@@ -7,11 +7,13 @@ useradd -rm mogilefs
 
 passwd mogilefs
 
-# Install required build tools
+# Install required build and testing tools
 
 yum -y groupinstall "Development Tools"
 yum -y install perl-YAML
 yum -y install perl-CPAN
+yum -y install perl-DBD-MySQL
+
 
 # Install mogilefs server
 # If you get any errors during the following(make install) process it will probably 
@@ -77,6 +79,6 @@ perl -MCPAN -e 'install List::MoreUtils'
 perl -MCPAN -e 'install Path::Class' 
 perl -MCPAN -e 'install Perlbal'
 perl -MCPAN -e 'install ExtUtils::MakeMaker'
-perl -MCPAN -e 'install DBD::mysql'
+#perl -MCPAN -e 'install DBD::mysql'
 
 echo "MogileFS installed"
