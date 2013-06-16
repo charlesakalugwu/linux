@@ -44,6 +44,17 @@ To install/update mogilefs storage node service (mogstored) run:
   wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/setup.mogstored.service.centos -O ./install.mogstored.service   
   chmod +x ./install.mogstored.service   
   ./install.mogstored.service   
+  
+  
+#### Setup DB connection from each tracker node
+--------------------------------------------------
+
+Each tracker needs to introduce itself, so to speak, to the mysql database node by running the following:   
+
+  wget https://raw.github.com/cprenzberg/linux/master/centos/mogilefs/setup.mogilefsd.db.connection -O ./setup.db.connection.for.tracker    
+  chmod +x ./setup.db.connection.for.tracker    
+  ./setup.db.connection.for.tracker    
+  
 
 
 ####Current Versions of MogileFS and required modules
