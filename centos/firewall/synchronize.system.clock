@@ -1,0 +1,11 @@
+# Install ntp
+yum -y install ntp
+
+# Turn on the ntpd service
+ chkconfig ntpd on
+
+# Synchronize the system clock with 0.pool.ntp.org server:
+  ntpdate pool.ntp.org
+
+Start the NTP:
+  service ntpd start;
