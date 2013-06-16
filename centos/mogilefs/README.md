@@ -177,6 +177,32 @@
     mogtool inject file-name key-name    
     mogtool extract key-name file-name    
     
+    
+    #example
+    
+    # download a file from somewhere online, save it as 
+    #ls -l ./ to compare sizes of downloaded and redownloaded ...or use any other verification you want 
+    # such as simply viewing the files
+    wget http://pcdn.500px.net/37672672/3952f38dccc481af1ce014625b964de965123aae/4.jpg -O ./downloaded
+    mogtool inject ./downloaded uploaded
+    mogtool extract uploaded ./redownloaded
+    ls -l ./
+    
+    # sample upload log
+    
+    root@node1.storage.dfs:~# mogtool inject ./downloaded uploaded
+    file uploaded: a4be8dcc7ca9317723eabb1f96d97b42, len = 301027
+    Spawned child 4799 to deal with chunk number 1.
+            chunk 1 saved in 0.30 seconds.
+    Child 4799 successfully finished with chunk 1.
+    Replicating: 1
+           Verifying chunk 1, path http://192.168.0.3:7500/dev3/0/000/000/0000000029.fid...ok
+           Verifying chunk 1, path http://192.168.0.108:7500/dev2/0/000/000/0000000029.fid...ok
+    root@node1.storage.dfs:~# mogtool extract uploaded ./redownloaded
+    Fetching piece 1...
+            Trying http://192.168.0.3:7500/dev3/0/000/000/0000000029.fid...
+    Done.
+    
     # for large files, >64M    
     mogtool inject --bigfile file-name key-name    
     mogtool extract --bigfile key-name file-name    
