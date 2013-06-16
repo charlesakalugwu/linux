@@ -148,27 +148,49 @@
               total:   172.606     11.730    160.876   6.80%    
 
     
-    #### Testing
-    --------------------------------
+    #### Testing   
+    --------------------------------   
     
-    1. Create a domain:
+    # Create a domain:    
+    # A domain represents a classification for a group of files in the cluster.   
+    # If you have two webapps being developed, foo and bar, you could create a domain called foo for grouping    
+    # files associated with the foo webapp and create another domain called bar for the bar webapp.    
     
-    mogadm domain add testdomain
-    2. Add a class to the domain:
+    mogadm domain add testdomain    
     
-    mogadm class add testdomain testclass
-    3. Use modtool for adding and retriving the data.
+    # Add a class to the domain    
+    # Classes allow you to specify subgroups of files within a mogilefs cluster    
+    # A replication policy, minimum number of copies of the file (mindevcount)    
+    # across the cluster, hash type are specified here, in addition to class name.    
+    # For a photo sharing site called foobar, with a domain called foobar, one could create 4 classes    
+    # raw, scaled, preview, thumbnail to specify different sizes. the raw class could be set to have a minimum    
+    # of 4 copies across devices in the cluster while the others could be set to have just 2 copies or even 1 across    
+    # the cluster. If the others get lost, they can always be regenerated from the raw/original.    
     
-    mogtool inject file-name key-name
-    mogtool extract key-name file-name
-    for large files, >64M
-    
-    mogtool inject --bigfile file-name key-name
-    mogtool extract --bigfile key-name file-name
-    for directories
-    
-    mogtool inject --bigfile dir-name key-name
-    mogtool extract --bigfile dir-name file-name 
+    mogadm class add foobar raw --hashtype=MD5 --mindevcount=4    
+    mogadm class add foobar thumbnail --hashtype=MD5 --mindevcount=2    
 
 
+    #### Using mogtool for testing adding and retriving the data.     
+    ---------------------------------------------------------------    
+    
+    mogtool inject file-name key-name    
+    mogtool extract key-name file-name    
+    
+    # for large files, >64M    
+    mogtool inject --bigfile file-name key-name    
+    mogtool extract --bigfile key-name file-name    
+    
+    
+    # for directories    
+    mogtool inject --bigfile dir-name key-name    
+    mogtool extract --bigfile dir-name file-name     
+
+    
+    #### Using curl to upload data.
+    ---------------------------------------------------------------
+    
+    
+    
+    
     Installation assumes you are logged in as root. Use sudo as necessary if you are not root
