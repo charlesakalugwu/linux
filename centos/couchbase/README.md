@@ -1,4 +1,4 @@
-linux
-=====
-
-linux scripts for various things
+      Install Couchbase server 2.0.1
+      ------------------------------------
+      
+      
