@@ -1,3 +1,5 @@
+service couchbase-server stop
+
 yum -y groupinstall "Development Tools"
 yum -y install openssl098e
 wget http://packages.couchbase.com/releases/2.0.1/couchbase-server-enterprise_x86_64_2.0.1.rpm
