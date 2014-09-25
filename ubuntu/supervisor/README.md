@@ -4,8 +4,11 @@
 To install supervisor (3.1.2) via this script, execute the following:
 
   git clone git@github.com:charleslieferando/linux.git .
-  cd ubuntu/supervisor 
-  chmod +x ./install.supervisor.3.1.2   
+  
+  cd ubuntu/supervisor
+   
+  chmod +x ./install.supervisor.3.1.2
+     
   ./install.supervisor.3.1.2   
   
   
